@@ -12,9 +12,12 @@
 		664F92A82238EA3E00666884 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 664F92A62238EA3E00666884 /* Main.storyboard */; };
 		664F92AA2238EA3F00666884 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 664F92A92238EA3F00666884 /* Assets.xcassets */; };
 		664F92AD2238EA3F00666884 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 664F92AB2238EA3F00666884 /* LaunchScreen.storyboard */; };
+		BED2C1CC9180347B4FFECC19 /* Pods_AliyunOSSUploadImage.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A1D74FD64983058C14E10354 /* Pods_AliyunOSSUploadImage.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		12F9D12252CED0B83C15357B /* Pods-AliyunOSSUploadImage.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AliyunOSSUploadImage.release.xcconfig"; path = "Target Support Files/Pods-AliyunOSSUploadImage/Pods-AliyunOSSUploadImage.release.xcconfig"; sourceTree = "<group>"; };
+		2669B675127C53042897DED6 /* Pods-AliyunOSSUploadImage.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AliyunOSSUploadImage.debug.xcconfig"; path = "Target Support Files/Pods-AliyunOSSUploadImage/Pods-AliyunOSSUploadImage.debug.xcconfig"; sourceTree = "<group>"; };
 		664F929F2238EA3E00666884 /* AliyunOSSUploadImage.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AliyunOSSUploadImage.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		664F92A22238EA3E00666884 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		664F92A42238EA3E00666884 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -22,6 +25,7 @@
 		664F92A92238EA3F00666884 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		664F92AC2238EA3F00666884 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		664F92AE2238EA3F00666884 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A1D74FD64983058C14E10354 /* Pods_AliyunOSSUploadImage.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AliyunOSSUploadImage.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -29,17 +33,38 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BED2C1CC9180347B4FFECC19 /* Pods_AliyunOSSUploadImage.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		2678F9DAEA229AF26A5CB028 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				A1D74FD64983058C14E10354 /* Pods_AliyunOSSUploadImage.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		6648F71FB8A83FDFA954E2A1 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				2669B675127C53042897DED6 /* Pods-AliyunOSSUploadImage.debug.xcconfig */,
+				12F9D12252CED0B83C15357B /* Pods-AliyunOSSUploadImage.release.xcconfig */,
+			);
+			name = Pods;
+			path = Pods;
+			sourceTree = "<group>";
+		};
 		664F92962238EA3E00666884 = {
 			isa = PBXGroup;
 			children = (
 				664F92A12238EA3E00666884 /* AliyunOSSUploadImage */,
 				664F92A02238EA3E00666884 /* Products */,
+				6648F71FB8A83FDFA954E2A1 /* Pods */,
+				2678F9DAEA229AF26A5CB028 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -71,9 +96,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 664F92B12238EA3F00666884 /* Build configuration list for PBXNativeTarget "AliyunOSSUploadImage" */;
 			buildPhases = (
+				7271125E8D7DE629213AD270 /* [CP] Check Pods Manifest.lock */,
 				664F929B2238EA3E00666884 /* Sources */,
 				664F929C2238EA3E00666884 /* Frameworks */,
 				664F929D2238EA3E00666884 /* Resources */,
+				95D13D2FFB9DCADA6007CC44 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -129,6 +156,53 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		7271125E8D7DE629213AD270 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-AliyunOSSUploadImage-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		95D13D2FFB9DCADA6007CC44 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-AliyunOSSUploadImage/Pods-AliyunOSSUploadImage-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/AliyunOSSiOS/AliyunOSSiOS.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AliyunOSSiOS.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-AliyunOSSUploadImage/Pods-AliyunOSSUploadImage-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		664F929B2238EA3E00666884 /* Sources */ = {
@@ -280,6 +354,7 @@
 		};
 		664F92B22238EA3F00666884 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2669B675127C53042897DED6 /* Pods-AliyunOSSUploadImage.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Manual;
@@ -299,6 +374,7 @@
 		};
 		664F92B32238EA3F00666884 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 12F9D12252CED0B83C15357B /* Pods-AliyunOSSUploadImage.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Manual;
