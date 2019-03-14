@@ -11,12 +11,7 @@ import UIKit
 import AliyunOSSiOS
 class BRAliyunOSSUploadHelp: NSObject {
 
-    func br_configOSS() {
-        OSSDDLog.removeAllLoggers();
-        OSSLog.enable();
-       
-    }
-    /// 自己需要的
+    /// 自己需要的,其他地方使用忽略
     ///
     /// - Parameters:
     ///   - headerInfo: <#headerInfo description#>
