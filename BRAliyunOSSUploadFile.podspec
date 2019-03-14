@@ -16,7 +16,7 @@ Pod::Spec.new do |spec|
   #
 
   spec.name         = "BRAliyunOSSUploadFile"
-  spec.version      = "0.0.1"
+  spec.version      = "0.0.2"
   spec.summary      = "AliyunOSS upload"
 
   # This description is used to generate tags and improve search results.
@@ -25,7 +25,7 @@ Pod::Spec.new do |spec|
   #   * Write the description between the DESC delimiters below.
   #   * Finally, don't worry about the indent, CocoaPods strips it!
   #spec.description  = <<-DESC
-                   DESC
+#                   DESC
 
   spec.homepage     = "https://github.com/burning-git"
   # spec.screenshots  = "www.example.com/screenshots_1.gif", "www.example.com/screenshots_2.gif"
