@@ -90,7 +90,7 @@ Pod::Spec.new do |spec|
   #  Not including the public_header_files will make all headers public.
   #
 
-  spec.source_files  = "AliyunOSSUploadHelp", "AliyunOSSUploadImage/AliyunOSSUploadHelp/**/*.{swift}"
+  spec.source_files  = "AliyunOSSUploadImage/AliyunOSSUploadImage/AliyunOSSUploadHelp/**/*.{swift}"
   # spec.exclude_files = "Classes/Exclude"
 
   # spec.public_header_files = "Classes/**/*.h"
