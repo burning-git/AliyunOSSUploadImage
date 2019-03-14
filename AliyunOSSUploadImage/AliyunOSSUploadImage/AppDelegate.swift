@@ -8,13 +8,28 @@
 
 import UIKit
 
+//let OSS_STSTOKEN_URL: String = "http://10.13.50.10:8082/doctor/image/getOssSignForApp?businessCode=555-55"
+let OSS_STSTOKEN_URL: String = "http://10.13.50.3:8182/hospital/image/getOssSignForApp?businessCode=555-55"
+
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
+//    struct Student: Decodable {
+//        var name: String?
+//        var age: Int?
+//        var weight: Float?
+//    }
     var window: UIWindow?
 
-
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
+        
+        BRAliyunOSSUploadParameterConfig.default.mSTSTokenUrl = OSS_STSTOKEN_URL
+        
+        BRAliyunOSSUploadParameterConfig.default.mConfigHttpHeaderBlock =  {(info) in
+            return ["accessToken":"79d00042-22e4-46ba-bf65-3d694576a8c4","userHospitalId":"32"]
+        }
+        
+ 
         // Override point for customization after application launch.
         return true
     }
