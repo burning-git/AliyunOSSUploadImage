@@ -79,7 +79,7 @@ class BRAliyunOSSUploadHelp: NSObject {
     ///   - updateProgressBlock: 进度回调
     ///   - customInfo :  自定义参数
     ///   - successBlock: 成功回调
-    class  func br_ossUploadAImage(imgData:Data?,customInfo:Any?,requestModel:BRPutObjectModel?,successBlock:((_ success:Bool,_ dataInfo:Any? ,_ customInfo:Any?,_ error:Error?)->())?,updateProgressBlock:((_ bytesSent: Int64, _ totalBytesSent: Int64, _ totalBytesExpectedToSend: Int64,_ customInfo:Any?)->())? = nil) {
+    class  func br_ossUploadAImage(imgData:Data?,customInfo:Any?,requestModel:BROSSPutObjectModel?,successBlock:((_ success:Bool,_ dataInfo:Any? ,_ customInfo:Any?,_ error:Error?)->())?,updateProgressBlock:((_ bytesSent: Int64, _ totalBytesSent: Int64, _ totalBytesExpectedToSend: Int64,_ customInfo:Any?)->())? = nil) {
         
         if let imgData = imgData{
             
@@ -134,32 +134,6 @@ class BRAliyunOSSUploadHelp: NSObject {
 
             }
             
-        }
-    }
-    
-    class BRPutObjectModel:Any{
-        var bucketName:String?
-        var dir:String?
-        var SecurityToken:String?
-        var Expiration:String?
-        var AccessKeySecret:String?
-        var AccessKeyId:String?
-        var endPoint:String?
-        var showPreUrl:String?
-        
-        var objectKey:String?
-        var fileName:String?
-        var businessCode:String?
-        var otherInfo:Any?
-        func br_getFullStr() -> String {
-//            businessCode + "/" + "\(dir ?? "")" + "asdhasjdkahsdjk1312.png"
-            let full_url = (self.showPreUrl ?? "") + ( self.objectKey ?? "")
-            return full_url
-        }
-        //MARK:改方法需要 调用
-        func br_configObjectKey() {
-            
-            objectKey = (self.businessCode ?? "") + "/" + "\(self.dir ?? "")" + (self.fileName ?? "")
         }
     }
     

@@ -28,7 +28,23 @@ class ViewController: UIViewController {
     func br_uploadGrounpImg(datas:[Data]?,info:[AnyHashable:Any]?,businessCode:String?) {
         if let datas = datas,datas.count > 0, let temp_dict = info {
             
-            BRAliyunOSSUploadGroupHelp.br_uploadGrounpImg(datas: datas, ossInfo: info, businessCode: businessCode)
+            var modelArray = [BROSSPutObjectModel]()
+            datas.enumerated().forEach { (index,a_data) in
+                let temp = BROSSPutObjectModel()
+                temp.mData = a_data
+                temp.mUploadASuccessBlock = {(info) in
+                    print(info?.uploadSuccessPicUrl)
+                }
+                if index == 0 {
+                    temp.uploadSuccessPicUrl = "http://10.13.50.3:8182/hospital/image/getRealImageUrl?realUrl=555-55/HOS201840/2019/3/15/BEDBC190-5A3D-448C-A8E5-D20FECBD23AF.jpeg"
+                }
+                modelArray.append(temp)
+            }
+            
+            
+            BRAliyunOSSUploadGroupHelp.br_uploadGrounpImg(datas: modelArray, ossInfo: info, businessCode: businessCode, uploadSuccessBlock: { (success, error) in
+                
+            }, max: 3)
             
             return
             let group = DispatchGroup()
@@ -43,7 +59,7 @@ class ViewController: UIViewController {
             let  endPoint = temp_dict["endPoint"] as? String
             datas.enumerated().forEach { (index,obj) in
                                 
-                let model = BRAliyunOSSUploadHelp.BRPutObjectModel()
+                let model = BROSSPutObjectModel()
                 model.dir = dir
                 model.SecurityToken = SecurityToken
                 model.AccessKeySecret = AccessKeySecret

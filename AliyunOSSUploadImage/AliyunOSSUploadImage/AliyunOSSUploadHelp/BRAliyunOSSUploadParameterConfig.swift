@@ -41,6 +41,42 @@ class BRAliyunOSSUploadParameterConfig: NSObject {
 
 }
 
+class BROSSPutObjectModel:Any{
+    
+    var bucketName:String?
+    var dir:String?
+    var SecurityToken:String?
+    var Expiration:String?
+    var AccessKeySecret:String?
+    var AccessKeyId:String?
+    var endPoint:String?
+    var showPreUrl:String?
+    
+    var objectKey:String?
+    var fileName:String?
+    var businessCode:String?
+    var otherInfo:Any?
+    var mData:Data?
+    var groupKey:String?
+    
+    
+    /// 上传成功之后 的 url,过滤同次已上传的图片
+    var uploadSuccessPicUrl:String?
+    
+    func br_getFullStr() -> String {
+        //            businessCode + "/" + "\(dir ?? "")" + "asdhasjdkahsdjk1312.png"
+        let full_url = (self.showPreUrl ?? "") + ( self.objectKey ?? "")
+        return full_url
+    }
+    //MARK:改方法需要 调用
+    func br_configObjectKey() {
+        
+        objectKey = (self.businessCode ?? "") + "/" + "\(self.dir ?? "")" + (self.fileName ?? "")
+    }
+    
+    var mCustomDataUpdateBlock:((_ info:BROSSPutObjectModel?)->())?
+    var mUploadASuccessBlock:((_ info:BROSSPutObjectModel?)->())?
+}
 
 extension String {
     /// 随机生成UUID
