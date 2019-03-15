@@ -41,3 +41,73 @@ class BRAliyunOSSUploadParameterConfig: NSObject {
 
 }
 
+
+extension String {
+    /// 随机生成UUID
+    ///
+    /// - Returns: <#return value description#>
+    static func br_randomUUID() -> String{
+        let uuid_ref = CFUUIDCreate(kCFAllocatorDefault)
+        let uuid_string_ref = CFUUIDCreateString(kCFAllocatorDefault , uuid_ref)
+        let uuid = uuid_string_ref! as String
+        print(uuid + "UUID:")
+        return uuid
+    }
+    
+}
+
+extension NSData {
+    
+    enum kBRDataType {
+        case none
+        case png
+        case jpeg
+        case gif
+        case tiff
+        func br_lastName() -> String {
+            var name = "none"
+            switch self {
+            case .png:
+                name = "png"
+            case .gif:
+                name = "gif"
+            case .jpeg:
+                name = "jpeg"
+            case .tiff:
+                name = "tiff"
+            default:
+                name = ""
+            }
+            return name
+        }
+    }
+    
+    func br_getDataType() -> kBRDataType {
+        
+        var type = kBRDataType.none
+        var  c:UInt32?
+        self.getBytes(&c, length: 1)
+        switch c {
+        case 0xFF:
+            print("jpeg")
+            type = .jpeg
+        case 0x89:
+            print("png")
+            type = .png
+            
+        case 0x47:
+            print("gif")
+            type = .gif
+            
+        case 0x49,
+             0x4D:
+            print("tiff")
+            type = .tiff
+            
+        default:
+            print("none")
+        }
+        return type
+    }
+    
+}

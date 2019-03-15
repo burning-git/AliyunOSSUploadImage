@@ -8,22 +8,8 @@
 
 import UIKit
 
-extension String {
 
-    
-    
-    /// 随机生成UUID
-    ///
-    /// - Returns: <#return value description#>
-    static func randomUUID() -> String{
-        let uuid_ref = CFUUIDCreate(kCFAllocatorDefault)
-        let uuid_string_ref = CFUUIDCreateString(kCFAllocatorDefault , uuid_ref)
-        let uuid = uuid_string_ref! as String
-        print(uuid + "UUID:")
-        return uuid
-    }
-    
-}
+
    
 class ViewController: UIViewController {
 
@@ -32,6 +18,9 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+       
+        
+        
         // Do any additional setup after loading the view, typically from a nib.
     }
 
@@ -39,6 +28,9 @@ class ViewController: UIViewController {
     func br_uploadGrounpImg(datas:[Data]?,info:[AnyHashable:Any]?,businessCode:String?) {
         if let datas = datas,datas.count > 0, let temp_dict = info {
             
+            BRAliyunOSSUploadGroupHelp.br_uploadGrounpImg(datas: datas, ossInfo: info, businessCode: businessCode)
+            
+            return
             let group = DispatchGroup()
 
             let  dir = temp_dict["dir"] as? String
@@ -50,7 +42,7 @@ class ViewController: UIViewController {
             let  bucketName = temp_dict["bucketName"] as? String
             let  endPoint = temp_dict["endPoint"] as? String
             datas.enumerated().forEach { (index,obj) in
-                
+                                
                 let model = BRAliyunOSSUploadHelp.BRPutObjectModel()
                 model.dir = dir
                 model.SecurityToken = SecurityToken
@@ -60,11 +52,11 @@ class ViewController: UIViewController {
                 model.bucketName = bucketName
                 model.endPoint = endPoint
                 model.businessCode = businessCode
-                model.fileName = String.randomUUID() + ".png"
+                model.fileName = String.br_randomUUID() + "." + ((obj as NSData).br_getDataType().br_lastName() )
                 model.br_configObjectKey()
                 let full_url = model.br_getFullStr()
                 group.enter()
-                BRAliyunOSSUploadHelp.br_ossUploadAImage(imgData: obj, requestModel: model, successBlock: { (success, rsp, error) in
+                BRAliyunOSSUploadHelp.br_ossUploadAImage(imgData: obj, customInfo: nil, requestModel: model, successBlock: { (success, rsp,customInfo, error) in
                     group.leave()
                     print(full_url)
                 })

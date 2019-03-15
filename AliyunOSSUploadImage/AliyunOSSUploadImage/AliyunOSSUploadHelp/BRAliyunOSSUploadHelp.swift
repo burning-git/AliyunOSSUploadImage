@@ -77,8 +77,9 @@ class BRAliyunOSSUploadHelp: NSObject {
     ///   - imgData: 文件data
     ///   - requestModel: 数据model
     ///   - updateProgressBlock: 进度回调
+    ///   - customInfo :  自定义参数
     ///   - successBlock: 成功回调
-    class  func br_ossUploadAImage(imgData:Data?,requestModel:BRPutObjectModel?,successBlock:((_ success:Bool,_ dataInfo:Any? ,_ error:Error?)->())?,updateProgressBlock:((_ bytesSent: Int64, _ totalBytesSent: Int64, _ totalBytesExpectedToSend: Int64)->())? = nil) {
+    class  func br_ossUploadAImage(imgData:Data?,customInfo:Any?,requestModel:BRPutObjectModel?,successBlock:((_ success:Bool,_ dataInfo:Any? ,_ customInfo:Any?,_ error:Error?)->())?,updateProgressBlock:((_ bytesSent: Int64, _ totalBytesSent: Int64, _ totalBytesExpectedToSend: Int64,_ customInfo:Any?)->())? = nil) {
         
         if let imgData = imgData{
             
@@ -92,10 +93,11 @@ class BRAliyunOSSUploadHelp: NSObject {
                 endPoint_temp = config.mEndpoint
             }
             guard let bucketName = bucketName_temp ,let endPoint = endPoint_temp else {
+                successBlock?(false,"bucketName、endPoint没有数据",customInfo,nil)
                 return
             }
             guard let objectKey = requestModel?.objectKey else {
-                print("文件名称没有传")
+                successBlock?(false,"文件名称没有传",customInfo,nil)
                 return
             }
             let request = OSSPutObjectRequest()
@@ -116,16 +118,16 @@ class BRAliyunOSSUploadHelp: NSObject {
                 
                 request.uploadProgress = { (bytesSent: Int64, totalBytesSent: Int64, totalBytesExpectedToSend: Int64) -> Void in
                     print("bytesSent:\(bytesSent),totalBytesSent:\(totalBytesSent),totalBytesExpectedToSend:\(totalBytesExpectedToSend)");
-                    updateProgressBlock?(bytesSent,totalBytesSent,totalBytesExpectedToSend)
+                    updateProgressBlock?(bytesSent,totalBytesSent,totalBytesExpectedToSend,customInfo)
                 };
                 let task = client.putObject(request)
                 task.continue({ (t) -> Any? in
                     //self.showResult(task: t)
                     if task.error != nil {
-                        successBlock?(false,nil,task.error)
+                        successBlock?(false,nil,customInfo,task.error)
                     }
                     else{
-                        successBlock?(true,task.result,nil)
+                        successBlock?(true,task.result,customInfo,nil)
                     }
                     return nil
                 }).waitUntilFinished()
@@ -134,7 +136,6 @@ class BRAliyunOSSUploadHelp: NSObject {
             
         }
     }
-
     
     class BRPutObjectModel:Any{
         var bucketName:String?

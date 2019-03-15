@@ -14,6 +14,7 @@
 		664F92AD2238EA3F00666884 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 664F92AB2238EA3F00666884 /* LaunchScreen.storyboard */; };
 		664F92B92238F69B00666884 /* BRAliyunOSSUploadHelp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 664F92B82238F69A00666884 /* BRAliyunOSSUploadHelp.swift */; };
 		6686D380223A112D00720E10 /* BRAliyunOSSUploadParameterConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6686D37F223A112D00720E10 /* BRAliyunOSSUploadParameterConfig.swift */; };
+		66891466223B3D9E0092B0CA /* BRAliyunOSSUploadGroupHelp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66891465223B3D9E0092B0CA /* BRAliyunOSSUploadGroupHelp.swift */; };
 		BED2C1CC9180347B4FFECC19 /* Pods_AliyunOSSUploadImage.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A1D74FD64983058C14E10354 /* Pods_AliyunOSSUploadImage.framework */; };
 /* End PBXBuildFile section */
 
@@ -29,6 +30,7 @@
 		664F92AE2238EA3F00666884 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		664F92B82238F69A00666884 /* BRAliyunOSSUploadHelp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BRAliyunOSSUploadHelp.swift; sourceTree = "<group>"; };
 		6686D37F223A112D00720E10 /* BRAliyunOSSUploadParameterConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BRAliyunOSSUploadParameterConfig.swift; sourceTree = "<group>"; };
+		66891465223B3D9E0092B0CA /* BRAliyunOSSUploadGroupHelp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BRAliyunOSSUploadGroupHelp.swift; sourceTree = "<group>"; };
 		A1D74FD64983058C14E10354 /* Pods_AliyunOSSUploadImage.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AliyunOSSUploadImage.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -97,6 +99,7 @@
 			isa = PBXGroup;
 			children = (
 				664F92B82238F69A00666884 /* BRAliyunOSSUploadHelp.swift */,
+				66891465223B3D9E0092B0CA /* BRAliyunOSSUploadGroupHelp.swift */,
 				6686D37F223A112D00720E10 /* BRAliyunOSSUploadParameterConfig.swift */,
 			);
 			path = AliyunOSSUploadHelp;
@@ -226,6 +229,7 @@
 				664F92A52238EA3E00666884 /* ViewController.swift in Sources */,
 				664F92B92238F69B00666884 /* BRAliyunOSSUploadHelp.swift in Sources */,
 				664F92A32238EA3E00666884 /* AppDelegate.swift in Sources */,
+				66891466223B3D9E0092B0CA /* BRAliyunOSSUploadGroupHelp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
