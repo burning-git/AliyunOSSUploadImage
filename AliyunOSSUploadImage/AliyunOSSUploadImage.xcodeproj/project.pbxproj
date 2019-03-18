@@ -7,20 +7,23 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		664F0F68223FAFB200D7D5D1 /* BRAliyunOSSUploadGroupHelp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 664F0F65223FAFB200D7D5D1 /* BRAliyunOSSUploadGroupHelp.swift */; };
+		664F0F69223FAFB200D7D5D1 /* BRAliyunOSSUploadParameterConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 664F0F66223FAFB200D7D5D1 /* BRAliyunOSSUploadParameterConfig.swift */; };
+		664F0F6A223FAFB200D7D5D1 /* BRAliyunOSSUploadHelp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 664F0F67223FAFB200D7D5D1 /* BRAliyunOSSUploadHelp.swift */; };
 		664F92A32238EA3E00666884 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 664F92A22238EA3E00666884 /* AppDelegate.swift */; };
 		664F92A52238EA3E00666884 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 664F92A42238EA3E00666884 /* ViewController.swift */; };
 		664F92A82238EA3E00666884 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 664F92A62238EA3E00666884 /* Main.storyboard */; };
 		664F92AA2238EA3F00666884 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 664F92A92238EA3F00666884 /* Assets.xcassets */; };
 		664F92AD2238EA3F00666884 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 664F92AB2238EA3F00666884 /* LaunchScreen.storyboard */; };
-		664F92B92238F69B00666884 /* BRAliyunOSSUploadHelp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 664F92B82238F69A00666884 /* BRAliyunOSSUploadHelp.swift */; };
-		6686D380223A112D00720E10 /* BRAliyunOSSUploadParameterConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6686D37F223A112D00720E10 /* BRAliyunOSSUploadParameterConfig.swift */; };
-		66891466223B3D9E0092B0CA /* BRAliyunOSSUploadGroupHelp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66891465223B3D9E0092B0CA /* BRAliyunOSSUploadGroupHelp.swift */; };
 		BED2C1CC9180347B4FFECC19 /* Pods_AliyunOSSUploadImage.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A1D74FD64983058C14E10354 /* Pods_AliyunOSSUploadImage.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		12F9D12252CED0B83C15357B /* Pods-AliyunOSSUploadImage.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AliyunOSSUploadImage.release.xcconfig"; path = "Target Support Files/Pods-AliyunOSSUploadImage/Pods-AliyunOSSUploadImage.release.xcconfig"; sourceTree = "<group>"; };
 		2669B675127C53042897DED6 /* Pods-AliyunOSSUploadImage.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AliyunOSSUploadImage.debug.xcconfig"; path = "Target Support Files/Pods-AliyunOSSUploadImage/Pods-AliyunOSSUploadImage.debug.xcconfig"; sourceTree = "<group>"; };
+		664F0F65223FAFB200D7D5D1 /* BRAliyunOSSUploadGroupHelp.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BRAliyunOSSUploadGroupHelp.swift; sourceTree = "<group>"; };
+		664F0F66223FAFB200D7D5D1 /* BRAliyunOSSUploadParameterConfig.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BRAliyunOSSUploadParameterConfig.swift; sourceTree = "<group>"; };
+		664F0F67223FAFB200D7D5D1 /* BRAliyunOSSUploadHelp.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BRAliyunOSSUploadHelp.swift; sourceTree = "<group>"; };
 		664F929F2238EA3E00666884 /* AliyunOSSUploadImage.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AliyunOSSUploadImage.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		664F92A22238EA3E00666884 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		664F92A42238EA3E00666884 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -28,9 +31,6 @@
 		664F92A92238EA3F00666884 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		664F92AC2238EA3F00666884 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		664F92AE2238EA3F00666884 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		664F92B82238F69A00666884 /* BRAliyunOSSUploadHelp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BRAliyunOSSUploadHelp.swift; sourceTree = "<group>"; };
-		6686D37F223A112D00720E10 /* BRAliyunOSSUploadParameterConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BRAliyunOSSUploadParameterConfig.swift; sourceTree = "<group>"; };
-		66891465223B3D9E0092B0CA /* BRAliyunOSSUploadGroupHelp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BRAliyunOSSUploadGroupHelp.swift; sourceTree = "<group>"; };
 		A1D74FD64983058C14E10354 /* Pods_AliyunOSSUploadImage.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AliyunOSSUploadImage.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -63,6 +63,16 @@
 			path = Pods;
 			sourceTree = "<group>";
 		};
+		664F0F64223FAFB200D7D5D1 /* AliyunOSSUploadHelp */ = {
+			isa = PBXGroup;
+			children = (
+				664F0F65223FAFB200D7D5D1 /* BRAliyunOSSUploadGroupHelp.swift */,
+				664F0F66223FAFB200D7D5D1 /* BRAliyunOSSUploadParameterConfig.swift */,
+				664F0F67223FAFB200D7D5D1 /* BRAliyunOSSUploadHelp.swift */,
+			);
+			path = AliyunOSSUploadHelp;
+			sourceTree = SOURCE_ROOT;
+		};
 		664F92962238EA3E00666884 = {
 			isa = PBXGroup;
 			children = (
@@ -84,7 +94,7 @@
 		664F92A12238EA3E00666884 /* AliyunOSSUploadImage */ = {
 			isa = PBXGroup;
 			children = (
-				664F92B72238F66A00666884 /* AliyunOSSUploadHelp */,
+				664F0F64223FAFB200D7D5D1 /* AliyunOSSUploadHelp */,
 				664F92A22238EA3E00666884 /* AppDelegate.swift */,
 				664F92A42238EA3E00666884 /* ViewController.swift */,
 				664F92A62238EA3E00666884 /* Main.storyboard */,
@@ -93,16 +103,6 @@
 				664F92AE2238EA3F00666884 /* Info.plist */,
 			);
 			path = AliyunOSSUploadImage;
-			sourceTree = "<group>";
-		};
-		664F92B72238F66A00666884 /* AliyunOSSUploadHelp */ = {
-			isa = PBXGroup;
-			children = (
-				664F92B82238F69A00666884 /* BRAliyunOSSUploadHelp.swift */,
-				66891465223B3D9E0092B0CA /* BRAliyunOSSUploadGroupHelp.swift */,
-				6686D37F223A112D00720E10 /* BRAliyunOSSUploadParameterConfig.swift */,
-			);
-			path = AliyunOSSUploadHelp;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -225,11 +225,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				6686D380223A112D00720E10 /* BRAliyunOSSUploadParameterConfig.swift in Sources */,
+				664F0F69223FAFB200D7D5D1 /* BRAliyunOSSUploadParameterConfig.swift in Sources */,
+				664F0F6A223FAFB200D7D5D1 /* BRAliyunOSSUploadHelp.swift in Sources */,
 				664F92A52238EA3E00666884 /* ViewController.swift in Sources */,
-				664F92B92238F69B00666884 /* BRAliyunOSSUploadHelp.swift in Sources */,
+				664F0F68223FAFB200D7D5D1 /* BRAliyunOSSUploadGroupHelp.swift in Sources */,
 				664F92A32238EA3E00666884 /* AppDelegate.swift in Sources */,
-				66891466223B3D9E0092B0CA /* BRAliyunOSSUploadGroupHelp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
