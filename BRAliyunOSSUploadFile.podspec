@@ -16,7 +16,7 @@ Pod::Spec.new do |spec|
   #
 
   spec.name         = "BRAliyunOSSUploadFile"
-  spec.version      = "0.0.4"
+  spec.version      = "0.0.5"
   spec.summary      = "AliyunOSS upload"
 
   # This description is used to generate tags and improve search results.
@@ -91,7 +91,7 @@ Pod::Spec.new do |spec|
   #  Not including the public_header_files will make all headers public.
   #
 
-  spec.source_files  = "AliyunOSSUploadImage/AliyunOSSUploadImage/AliyunOSSUploadHelp/**/*.{swift}"
+  spec.source_files  = "AliyunOSSUploadImage/AliyunOSSUploadImage/AliyunOSSUploadHelp/*.swift"
   # spec.exclude_files = "Classes/Exclude"
 
   # spec.public_header_files = "Classes/**/*.h"
