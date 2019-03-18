@@ -9,7 +9,7 @@
 import UIKit
 //import AliyunOSSSwiftSDK
 import AliyunOSSiOS
-class BRAliyunOSSUploadHelp: NSObject {
+public class BRAliyunOSSUploadHelp: NSObject {
 
     /// 自己需要的,其他地方使用忽略
     ///
@@ -17,7 +17,7 @@ class BRAliyunOSSUploadHelp: NSObject {
     ///   - headerInfo: <#headerInfo description#>
     ///   - url: <#url description#>
     ///   - block: <#block description#>
-    class func getOOSConfigToken(headerInfo:[String:String]?,url:String?,block:((_ success:Bool,_ dict:Any?)->())?) {
+   public class func getOOSConfigToken(headerInfo:[String:String]?,url:String?,block:((_ success:Bool,_ dict:Any?)->())?) {
         var tempUrl = url
         if tempUrl == nil {
             tempUrl = BRAliyunOSSUploadParameterConfig.default.mSTSTokenUrl
@@ -79,7 +79,7 @@ class BRAliyunOSSUploadHelp: NSObject {
     ///   - updateProgressBlock: 进度回调
     ///   - customInfo :  自定义参数
     ///   - successBlock: 成功回调
-    class  func br_ossUploadAImage(imgData:Data?,customInfo:Any?,requestModel:BROSSPutObjectModel?,successBlock:((_ success:Bool,_ dataInfo:Any? ,_ customInfo:Any?,_ error:Error?)->())?,updateProgressBlock:((_ bytesSent: Int64, _ totalBytesSent: Int64, _ totalBytesExpectedToSend: Int64,_ customInfo:Any?)->())? = nil) {
+   public class  func br_ossUploadAImage(imgData:Data?,customInfo:Any?,requestModel:BROSSPutObjectModel?,successBlock:((_ success:Bool,_ dataInfo:Any? ,_ customInfo:Any?,_ error:Error?)->())?,updateProgressBlock:((_ bytesSent: Int64, _ totalBytesSent: Int64, _ totalBytesExpectedToSend: Int64,_ customInfo:Any?)->())? = nil) {
         
         if let imgData = imgData{
             

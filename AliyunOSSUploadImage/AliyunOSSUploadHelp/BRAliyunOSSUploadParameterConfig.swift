@@ -8,7 +8,7 @@
 
 import UIKit
 
-class BRAliyunOSSUploadParameterConfig: NSObject {
+public class BRAliyunOSSUploadParameterConfig: NSObject {
     
     enum kHttpMethod {
         case post
@@ -41,7 +41,7 @@ class BRAliyunOSSUploadParameterConfig: NSObject {
 
 }
 
-class BROSSPutObjectModel:Any{
+public class BROSSPutObjectModel:Any{
     
     var bucketName:String?
     var dir:String?
@@ -78,7 +78,7 @@ class BROSSPutObjectModel:Any{
     var mUploadASuccessBlock:((_ info:BROSSPutObjectModel?)->())?
 }
 
-extension String {
+public extension String {
     /// 随机生成UUID
     ///
     /// - Returns: <#return value description#>
@@ -92,7 +92,7 @@ extension String {
     
 }
 
-extension NSData {
+public extension NSData {
     
     enum kBRDataType {
         case none

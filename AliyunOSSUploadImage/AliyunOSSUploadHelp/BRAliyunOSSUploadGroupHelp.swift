@@ -8,9 +8,9 @@
 
 import UIKit
 
-class BRAliyunOSSUploadGroupHelp: BRAliyunOSSUploadHelp {
+public class BRAliyunOSSUploadGroupHelp: BRAliyunOSSUploadHelp {
     
-    class func br_uploadGrounpImg(
+   public class func br_uploadGrounpImg(
         datas:[BROSSPutObjectModel]?,
         ossInfo:[AnyHashable:Any]?,
         businessCode:String?,
@@ -83,7 +83,7 @@ class BRAliyunOSSUploadGroupHelp: BRAliyunOSSUploadHelp {
 
     }
    
-    class BROperationQueueFinish: OperationQueue {
+   public class BROperationQueueFinish: OperationQueue {
         
         var mFinishBlock:(()->())?
         
@@ -92,7 +92,7 @@ class BRAliyunOSSUploadGroupHelp: BRAliyunOSSUploadHelp {
             self.addObserver(self, forKeyPath: "operations", options: NSKeyValueObservingOptions.new, context: nil)
         }
         
-        override func observeValue(forKeyPath keyPath: String?, of object: Any?, change: [NSKeyValueChangeKey : Any]?, context: UnsafeMutableRawPointer?) {
+    override public func observeValue(forKeyPath keyPath: String?, of object: Any?, change: [NSKeyValueChangeKey : Any]?, context: UnsafeMutableRawPointer?) {
             if (object as?BROperationQueueFinish)  === self && keyPath == "operations"{
                 print(self.operationCount)
                 if self.operationCount == 0{
