@@ -10,7 +10,7 @@ import UIKit
 
 public class BRAliyunOSSUploadParameterConfig: NSObject {
     
-    enum kHttpMethod {
+    public enum kHttpMethod {
         case post
         case get
         
@@ -27,62 +27,62 @@ public class BRAliyunOSSUploadParameterConfig: NSObject {
     }
     
     override init() {}
-    static let `default` = BRAliyunOSSUploadParameterConfig()
-    var mConfigHttpHeaderBlock:((_ otherInfo:Any?)->([String:String]?))?
+   public static let `default` = BRAliyunOSSUploadParameterConfig()
+   public var mConfigHttpHeaderBlock:((_ otherInfo:Any?)->([String:String]?))?
     
-    var mCustomParseReturnDataBlock:((_ otherInfo:Any?,_ dictData:Any?)->())?
+   public var mCustomParseReturnDataBlock:((_ otherInfo:Any?,_ dictData:Any?)->())?
     ///  获取 sts token url
-    var mSTSTokenUrl:String?
-    var mRootKey:String? = "data"
-    var mEndpoint:String?
-    var mBucketName:String?
+   public var mSTSTokenUrl:String?
+   public var mRootKey:String? = "data"
+   public var mEndpoint:String?
+   public var mBucketName:String?
     
-    var httpMethod:kHttpMethod = kHttpMethod.post
+   public var httpMethod:kHttpMethod = kHttpMethod.post
 
 }
 
 public class BROSSPutObjectModel:Any{
     
-    var bucketName:String?
-    var dir:String?
-    var SecurityToken:String?
-    var Expiration:String?
-    var AccessKeySecret:String?
-    var AccessKeyId:String?
-    var endPoint:String?
-    var showPreUrl:String?
+   public var bucketName:String?
+   public var dir:String?
+   public var SecurityToken:String?
+   public var Expiration:String?
+   public var AccessKeySecret:String?
+   public var AccessKeyId:String?
+   public var endPoint:String?
+   public var showPreUrl:String?
     
-    var objectKey:String?
-    var fileName:String?
-    var businessCode:String?
-    var otherInfo:Any?
-    var mData:Data?
-    var groupKey:String?
+   public var objectKey:String?
+   public var fileName:String?
+   public var businessCode:String?
+   public var otherInfo:Any?
+   public var mData:Data?
+   public var groupKey:String?
     
     
     /// 上传成功之后 的 url,过滤同次已上传的图片
-    var uploadSuccessPicUrl:String?
+   public var uploadSuccessPicUrl:String?
     
-    func br_getFullStr() -> String {
+   public func br_getFullStr() -> String {
         //            businessCode + "/" + "\(dir ?? "")" + "asdhasjdkahsdjk1312.png"
         let full_url = (self.showPreUrl ?? "") + ( self.objectKey ?? "")
         return full_url
     }
     //MARK:改方法需要 调用
-    func br_configObjectKey() {
+   public func br_configObjectKey() {
         
         objectKey = (self.businessCode ?? "") + "/" + "\(self.dir ?? "")" + (self.fileName ?? "")
     }
     
-    var mCustomDataUpdateBlock:((_ info:BROSSPutObjectModel?)->())?
-    var mUploadASuccessBlock:((_ info:BROSSPutObjectModel?)->())?
+   public var mCustomDataUpdateBlock:((_ info:BROSSPutObjectModel?)->())?
+   public var mUploadASuccessBlock:((_ info:BROSSPutObjectModel?)->())?
 }
 
 public extension String {
     /// 随机生成UUID
     ///
     /// - Returns: <#return value description#>
-    static func br_randomUUID() -> String{
+   public static func br_randomUUID() -> String{
         let uuid_ref = CFUUIDCreate(kCFAllocatorDefault)
         let uuid_string_ref = CFUUIDCreateString(kCFAllocatorDefault , uuid_ref)
         let uuid = uuid_string_ref! as String
@@ -94,7 +94,7 @@ public extension String {
 
 public extension NSData {
     
-    enum kBRDataType {
+   public enum kBRDataType {
         case none
         case png
         case jpeg
@@ -118,7 +118,7 @@ public extension NSData {
         }
     }
     
-    func br_getDataType() -> kBRDataType {
+   public func br_getDataType() -> kBRDataType {
         
         var type = kBRDataType.none
         var  c:UInt32?
