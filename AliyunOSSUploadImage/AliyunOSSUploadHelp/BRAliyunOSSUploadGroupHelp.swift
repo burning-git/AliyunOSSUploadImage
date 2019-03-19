@@ -49,7 +49,10 @@ public class BRAliyunOSSUploadGroupHelp: BRAliyunOSSUploadHelp {
                         model.showPreUrl = showPreUrl
                         model.bucketName = bucketName
                         model.endPoint = endPoint
-                        model.businessCode = businessCode
+                        if businessCode != nil {
+                            model.businessCode = businessCode
+                        }
+                        
                         model.fileName = String.br_randomUUID() + "." + ((mData as NSData).br_getDataType().br_lastName())
                         model.br_configObjectKey()
                         model.mCustomDataUpdateBlock?(model)
