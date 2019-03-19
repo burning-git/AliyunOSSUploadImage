@@ -26,7 +26,7 @@ public class BRAliyunOSSUploadParameterConfig: NSObject {
         }
     }
     
-    override init() {}
+   override init() {}
    public static let `default` = BRAliyunOSSUploadParameterConfig()
    public var mConfigHttpHeaderBlock:((_ otherInfo:Any?)->([String:String]?))?
     
@@ -41,8 +41,9 @@ public class BRAliyunOSSUploadParameterConfig: NSObject {
 
 }
 
-public class BROSSPutObjectModel:Any{
+public class BROSSPutObjectModel:NSObject{
     
+   public override init() {}
    public var bucketName:String?
    public var dir:String?
    public var SecurityToken:String?
