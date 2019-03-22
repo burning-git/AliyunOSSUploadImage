@@ -83,7 +83,10 @@ public class BRAliyunOSSUploadGroupHelp: BRAliyunOSSUploadHelp {
 
             }
         }
-
+        else{
+            let msg = NSError(domain: "无图片或者无ossinfo", code: -10, userInfo: nil)
+            uploadSuccessBlock?(false,msg)
+        }
     }
    
    public class BROperationQueueFinish: OperationQueue {
