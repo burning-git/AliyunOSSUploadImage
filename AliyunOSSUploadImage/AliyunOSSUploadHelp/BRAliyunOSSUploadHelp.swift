@@ -10,6 +10,22 @@ import UIKit
 //import AliyunOSSSwiftSDK
 import AliyunOSSiOS
 public class BRAliyunOSSUploadHelp: NSObject {
+    
+    
+    
+    /// 主线程
+    ///
+    /// - Parameter block: <#block description#>
+    class func br_uploadHelpOnMain(block:(()->())?) {
+        if Thread.isMainThread {
+            block?()
+        }
+        else{
+            DispatchQueue.main.async {
+                block?()
+            }
+        }
+    }
 
     /// 自己需要的,其他地方使用忽略
     ///
@@ -48,23 +64,28 @@ public class BRAliyunOSSUploadHelp: NSObject {
         let rootKey = BRAliyunOSSUploadParameterConfig.default.mRootKey
         let task = session.dataTask(with: request) { (data, response, error) in
             
-            if error == nil {
-                if let data = data {
-                    tcs.setResult(data as AnyObject)
-                    let json = try? JSONSerialization.jsonObject(with: tcs.task.result as! Data,
-                                                                 options:.allowFragments)
-                    if let rootKey = rootKey{
-                        let relust_dict  =  (json as? [AnyHashable: Any])
-                        block?(true,relust_dict?[rootKey])
+            
+            BRAliyunOSSUploadHelp.br_uploadHelpOnMain(block: {
+                
+                if error == nil {
+                    if let data = data {
+                        tcs.setResult(data as AnyObject)
+                        let json = try? JSONSerialization.jsonObject(with: tcs.task.result as! Data,
+                                                                     options:.allowFragments)
+                        if let rootKey = rootKey{
+                            let relust_dict  =  (json as? [AnyHashable: Any])
+                            block?(true,relust_dict?[rootKey])
+                        }
+                        else{
+                            block?(true,json)
+                        }
+                        //print(json)
+                        return
                     }
-                    else{
-                        block?(true,json)
-                    }
-                    //print(json)
-                    return
                 }
-            }
-            block?(false,error)
+                block?(false,error)
+            })
+          
         }
         task.resume()
     }
@@ -123,13 +144,18 @@ public class BRAliyunOSSUploadHelp: NSObject {
                 let task = client.putObject(request)
                 task.continue({ (t) -> Any? in
                     //self.showResult(task: t)
-                    if task.error != nil {
-                        successBlock?(false,nil,customInfo,task.error)
-                    }
-                    else{
-                        successBlock?(true,task.result,customInfo,nil)
-                    }
+                    
+                    BRAliyunOSSUploadHelp.br_uploadHelpOnMain(block: {
+                        if task.error != nil {
+                            successBlock?(false,nil,customInfo,task.error)
+                        }
+                        else{
+                            successBlock?(true,task.result,customInfo,nil)
+                        }
+                    })
                     return nil
+
+                    
                 }).waitUntilFinished()
 
             }

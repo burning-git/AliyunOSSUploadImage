@@ -36,7 +36,10 @@ public class BRAliyunOSSUploadGroupHelp: BRAliyunOSSUploadHelp {
             let data_array = datas.filter({$0.mData != nil && $0.uploadSuccessPicUrl == nil})
             
             quene.mFinishBlock = { ()in
-                uploadSuccessBlock?(true,nil)
+                
+                BRAliyunOSSUploadHelp.br_uploadHelpOnMain(block: {
+                    uploadSuccessBlock?(true,nil)
+                })
             }
             data_array.enumerated().forEach { (index,obj) in
                 if let mData = obj.mData {
@@ -65,7 +68,9 @@ public class BRAliyunOSSUploadGroupHelp: BRAliyunOSSUploadHelp {
                             }
                             else{
                                 quene.cancelAllOperations()
-                                uploadSuccessBlock?(false,error)
+                                BRAliyunOSSUploadHelp.br_uploadHelpOnMain(block: {
+                                    uploadSuccessBlock?(false,error)
+                                })
                             }
                         })
                     })
@@ -76,7 +81,10 @@ public class BRAliyunOSSUploadGroupHelp: BRAliyunOSSUploadHelp {
             
             if data_array.count <= 0 {
                 let error = NSError.init(domain: "无需上传图片", code: 0, userInfo: nil)
-                uploadSuccessBlock?(false,error)
+                BRAliyunOSSUploadHelp.br_uploadHelpOnMain(block: {
+                    uploadSuccessBlock?(false,error)
+                })
+//                uploadSuccessBlock?(false,error)
             }
             else{
                 quene.isSuspended = false
@@ -85,7 +93,10 @@ public class BRAliyunOSSUploadGroupHelp: BRAliyunOSSUploadHelp {
         }
         else{
             let msg = NSError(domain: "无图片或者无ossinfo", code: -10, userInfo: nil)
-            uploadSuccessBlock?(false,msg)
+            BRAliyunOSSUploadHelp.br_uploadHelpOnMain(block: {
+                uploadSuccessBlock?(false,msg)
+            })
+//            uploadSuccessBlock?(false,msg)
         }
     }
    
