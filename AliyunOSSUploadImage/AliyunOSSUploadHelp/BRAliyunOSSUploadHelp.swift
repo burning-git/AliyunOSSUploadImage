@@ -16,7 +16,7 @@ public class BRAliyunOSSUploadHelp: NSObject {
     /// 主线程
     ///
     /// - Parameter block: <#block description#>
-    class func br_uploadHelpOnMain(block:(()->())?) {
+   public class func br_uploadHelpOnMain(block:(()->())?) {
         if Thread.isMainThread {
             block?()
         }
