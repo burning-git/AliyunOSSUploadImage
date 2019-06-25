@@ -113,7 +113,7 @@ public extension NSData {
             case .tiff:
                 name = "tiff"
             default:
-                name = ""
+                name = "jpeg"
             }
             return name
         }
